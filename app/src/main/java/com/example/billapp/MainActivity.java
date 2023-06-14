@@ -29,21 +29,13 @@ public class MainActivity extends AppCompatActivity {
                 int SU = SpeakUp(dataz, CMz, SMSz);
                 int M = Messenger(dataz, CMz, SMSz);
                 int D = Downloader(dataz, CMz, SMSz);
-                if (SU < M) {
+                if (SU < M && SU<D) {
                     tee.setText("The best contract available to you is SpeakUp");
                 }
-                if(SU<D){
-                    tee.setText("The best contract available to you is SpeakUp");
-                }
-                if (M < SU) {
+                else if (M < SU && M < D ) {
                     tee.setText("The best contract available to you is Messenger");
                 }
-                if (M < D) {
-                    tee.setText("The best contract available to you is Messenger");
-                }
-
-
-                if (D< SU && D < M) {
+                else if (D< SU && D < M) {
                     tee.setText("The best contract available to you is Download");
                 }
             }
